@@ -24,9 +24,8 @@ const Home = () => {
   useEffect(() => {
     if (!user || user.isLoggedIn === false) {
       return redirect("/login");
-    } else {
-      dispatch(fethingTodo())
-    }
+    } 
+    dispatch(fethingTodo())
   },[])
 
 
@@ -50,7 +49,7 @@ const Home = () => {
           </Button>
           <main className='flex flex-col gap-10'>
             {todo?.data?.map((data) => 
-                <CardTodo data={data}/>
+                <CardTodo key={data.id} data={data}/>
             )}
           </main>
         </Container>

@@ -29,7 +29,7 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-export default function CardTodo({ data }) {
+export default function CardTodo({key, data }) {
     const [expanded, setExpanded] = React.useState(false);
     const [editTodo, setEditTodo] = useState(true)
     const [openEdit, setOpenEdit] = useState(false)
@@ -42,7 +42,7 @@ export default function CardTodo({ data }) {
     return (
         <>
             <ModalTodoEdit dataEdit={data} openModal={openEdit} handleCloseModal={() => setOpenEdit(false)} />
-            <Card >
+            <Card key={key} >
                 <CardHeader
                     className='pt-5 pb-3 pr-9'
                     action={
