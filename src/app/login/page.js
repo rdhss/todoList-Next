@@ -50,6 +50,7 @@ export default function Login() {
 
   const dispatch = useDispatch()
   const userError = useSelector((state) => state.user.error)
+  let user =  typeof window !== "undefined" ? window.localStorage.getItem('token') : false
 
   const handleSubmit = (event) => {
     event.preventDefault();

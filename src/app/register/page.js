@@ -59,7 +59,8 @@ export default function Register() {
       .then((res) => { router.push('/login') })
       .catch((err) => { setErrorRegister(err.response.data.errors) })
   };
-
+  let user =  typeof window !== "undefined" ? window.localStorage.getItem('token') : false
+  
   useEffect(() => {
     if (user) {
       return redirect("/");
