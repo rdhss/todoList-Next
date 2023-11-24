@@ -22,14 +22,10 @@ const Home = () => {
 
   // Server-render loading state
   if (!user || user.isLoggedIn === false) {
-    return <h1>Loading...</h1>
+    return redirect("/login");
   }
 
   useEffect(() => {
-    if (!user) {
-      return redirect("/login");
-    }
-
     dispatch(fethingTodo())
   },[])
 
