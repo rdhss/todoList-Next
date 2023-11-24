@@ -18,7 +18,7 @@ const Home = () => {
 
   const todo = useSelector((state) => state.todo.data)
   const dispatch = useDispatch()
-  let user = localStorage.getItem('token')
+  let user =  typeof window !== "undefined" ? window.localStorage.getItem('token') : false
 
   // Server-render loading state
   useEffect(() => {

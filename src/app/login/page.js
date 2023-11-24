@@ -64,9 +64,6 @@ export default function Login() {
 
   };
 
-  const user  = localStorage.getItem('token')
- 
-  
   useEffect(() => {
     if (user) {
       return redirect("/");

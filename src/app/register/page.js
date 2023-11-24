@@ -60,9 +60,6 @@ export default function Register() {
       .catch((err) => { setErrorRegister(err.response.data.errors) })
   };
 
-  const user = localStorage.getItem('token')
-
-
   useEffect(() => {
     if (user) {
       return redirect("/");
