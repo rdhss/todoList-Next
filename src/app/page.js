@@ -20,24 +20,16 @@ const Home = () => {
   const dispatch = useDispatch()
   let user = localStorage.getItem('token')
 
-  // if(typeof localStorage !== 'undefined'){
-  //   user = localStorage.getItem('token')
-  // } else {
-  //   user = ''
-  // }
-  
-  useEffect(() => {
-      // setUser()
-      if (!user) {
-        return redirect("/login");
-      }
-    }, []);
   // Server-render loading state
   if (!user || user.isLoggedIn === false) {
     return <h1>Loading...</h1>
   }
 
   useEffect(() => {
+    if (!user) {
+      return redirect("/login");
+    }
+
     dispatch(fethingTodo())
   },[])
 
