@@ -17,6 +17,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import { redirect } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Edit Profile', 'Log Out'];
@@ -95,7 +97,7 @@ function HeaderTodo() {
             >
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
           
           <Typography
             variant="h5"
@@ -123,7 +125,7 @@ function HeaderTodo() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <AccountCircleIcon className='text-white text-4xl'/>
               </IconButton>
             </Tooltip>
             <Menu
