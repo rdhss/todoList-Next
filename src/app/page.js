@@ -21,13 +21,15 @@ const Home = () => {
   let user = localStorage.getItem('token')
 
   // Server-render loading state
-  if (!user || user.isLoggedIn === false) {
-    return redirect("/login");
-  }
-
   useEffect(() => {
-    dispatch(fethingTodo())
+    if (!user || user.isLoggedIn === false) {
+      return redirect("/login");
+    } else {
+      dispatch(fethingTodo())
+    }
   },[])
+
+
 
   return (
     <div>
